@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h1 class="text-center">Welcome {{model.name}}</h1>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+        <img src="../../assets/img/boy.png" class="img-responsive" alt="Image">
+        
+        <div class="list-group">
+          <div class="list-group-item active">
+            <h4 class="list-group-item-heading">{{model.name}}</h4>
+            <p class="list-group-item-text">New content of guest</p>
+          </div>
+        </div>
+        
+        <ul class="list-group">
+          <li class="list-group-item">Item 1</li>
+          <li class="list-group-item">Item 2</li>
+          <li class="list-group-item">Item 3</li>
+        </ul>
+  
+        <div class="list-group">
+          <div class="list-group-item suclist">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">Content goes here</p>
+          </div>
+        </div>
+  
+        <div class="list-group">
+            <div class="list-group-item orglist">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Content goes here</p>
+            </div>
+        </div>
+  
+        <div class="list-group">
+            <div class="list-group-item redlist">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Content goes here</p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+      <div class="hedone"></div>
+      
+      <div class="margin">
+      
+      <form action="#" method="post" role="form" *ngIf="!info" (submit)="editPerson()">
+        <legend>Edit Your Profile?</legend>
+  
+        <div class="form-group">
+          <label for="">Yourname</label>
+          <input type="text" class="form-control" name="name" placeholder="Input field" [(ngModel)] = "model.name" >
+          <br>
+          <label for="">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Input field" [(ngModel)] = "model.email">
+          <br>
+          <label for="">Number Phone</label>
+          <input type="number" class="form-control" name="nomerhp" placeholder="Input field" [(ngModel)] = "model.nomerhp">
+          <br>
+          <label for="">Address</label>
+          <textarea name="address" cols="30" rows="8" class="form-control" [(ngModel)] = "model.address"></textarea>
+          <br>
+          <label for="">Username</label>
+          <input type="text" class="form-control" name="username" placeholder="Input field" [(ngModel)] = "model.username">
+          <br>
+          <label for="">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Input field" [(ngModel)] = "model.password">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+      <div class="alert alert-success" *ngIf="info">
+        <h1><strong>Success Update Data</strong></h1> 
+      </div>
+      
+    </div>
+  </div>
+    
+</div>

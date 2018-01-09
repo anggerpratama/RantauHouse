@@ -1,0 +1,25 @@
+
+<div class="container">
+  <h1 class="text-center">See on Your Name</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>No</th> <th>Name</th> <th>Email</th> <th>Address</th> <th>Number Phone</th> <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of allUser; let i = index">
+        <td> {{i + 1}} </td> <td> {{user.name}} </td> <td> {{user.email}} </td> <td> {{user.address}} </td> <td>  {{user.nomerhp}} </td>
+        <td><button type="button" class="btn btn-info" routerLink="/edit/{{user.id_user}}">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deletePerson(user.id_user)">Delete</button></td>
+      </tr>
+      <tr>
+        <td colspan="6" class="text-center" *ngIf="!load" (mouseover)="tampil()">
+          <img src="../../assets/img/Rolling.gif" alt="rantau">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
