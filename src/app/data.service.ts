@@ -43,4 +43,11 @@ export class DataService {
     return this._http.post("http://localhost/api/delete.php" , {'id':id})
     .map(() => this.getAlldata());
   }
+  //Login page
+  loginPerson(data){
+    return this._http.post("http://localhost/api/login.php" , data)
+    .map(res =>{
+      res.json();
+    });
+  }
 }

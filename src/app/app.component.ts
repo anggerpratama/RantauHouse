@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router , ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,9 +11,27 @@ export class AppComponent {
   title = 'app';
   isCollapsed:boolean;
   navhide:boolean;
-  pathUrl:any;
+  pathUrl:string;
+  condi:boolean;
 
-  constructor(private router: Router , private route: ActivatedRoute){
+  constructor(private router: Router , private loca: Location){ 
+    this.pathUrl = window.location.pathname;
+    if (this.pathUrl == "/") {
+      this.setHome();
+    } else if(this.pathUrl == "/login") {
+      this.setLog();
+    }  else {
+      this.setHome();
+    }
   }
+
+  setHome(){
+    this.condi = false;
+  }
+  setLog(){
+    this.condi = true;
+  }
+
+  
 
 }

@@ -9,7 +9,7 @@ import { EditComponent } from './edit/edit.component';
 
 export const navApps:Routes = [
     {path: '' , component: OrderComponent},
-    {path: 'profile' , component: ProfileComponent},
+    {path: 'signup' , component: ProfileComponent},
     {path: 'edit/:id' , component: EditComponent},
     {path: 'login' , component: LoginComponent}
 ]

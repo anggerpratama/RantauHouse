@@ -7,3 +7,8 @@ export class user {
     username:string;
     password:string;
 }
+
+export class login {
+    username:string;
+    password:string;
+}

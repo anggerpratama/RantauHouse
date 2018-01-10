@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" *ngIf="!condi">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed">
@@ -15,16 +15,15 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar" [collapse]="!isCollapsed">
     <ul class="nav navbar-nav">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/profile">Profile</a></li>
+      <li><a routerLink="/" (click)="setHome()">Home</a></li>
+      <li><a routerLink="/dataview">DataView</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a>Click Link</a></li>
-      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/signup" >SignUp</a></li>
+      <li><a routerLink="/login" (click)="setLog()">Login</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-<h1>{{pathUrl}}</h1>
 
 <router-outlet>
   
