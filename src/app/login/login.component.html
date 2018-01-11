@@ -1,5 +1,5 @@
 
-<div class="container margin-now" *ngIf="!logic">
+<div class="container margin-now" *ngIf="(logic == 'noLog')">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <legend><h1>Hallo People</h1></legend>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque nulla, culpa quos laborum tenetur repellat in blanditiis accusamus vero natus fugiat deserunt iste, voluptatum possimus molestias dignissimos nisi id dolorum?</p>
@@ -10,17 +10,17 @@
     
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <img src="../../assets/img/logo.png" alt="" class="img-responsive imgrezise">
+      <img src="{{baseUrl}}/img/logo.png" alt="" class="img-responsive imgrezise">
     <form method="post" role="form" (submit)="login()">
       <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control input-lg" placeholder="username..." [(ngModel)] = "model.username" name="username">
+        <input type="text" class="form-control input-lg" placeholder="username..." [(ngModel)] = "model.username" name="username" required>
       </div>
       <label></label>
       <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input type="password" class="form-control input-lg" placeholder="password..." [(ngModel)] = "model.password" name="password">
+          <input type="password" class="form-control input-lg" placeholder="password..." [(ngModel)] = "model.password" name="password" required>
       </div>
       <br>
       <legend><h1>Login</h1></legend>
@@ -34,10 +34,12 @@
     
   </div>
 </div>
-<div class="container" *ngIf="logic">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h1>Login success</h1>
-    <h1 class="text-center">Data: username : {{perLog}}</h1>
+<div class="container" *ngIf="(logic == 'logged')" style="margin-top:120px;">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3">
+    <div class="alert alert-success">
+      <p class="text-center">Success Login</p>
+    </div>
+    <button type="button" class="btn btn-default">Back To Login</button>
   </div>
 </div>
 

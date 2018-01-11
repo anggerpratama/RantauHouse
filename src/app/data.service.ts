@@ -44,10 +44,12 @@ export class DataService {
     .map(() => this.getAlldata());
   }
   //Login page
-  loginPerson(data){
-    return this._http.post("http://localhost/api/login.php" , data)
+  loginPerson(username : string , password:string){
+    return this._http.post("http://localhost/api/login.php" , { username: username, password: password })
     .map(res =>{
-      res.json();
+      if (res) {
+        return res.json();
+      }
     });
   }
 }

@@ -20,11 +20,11 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="/signup" >SignUp</a></li>
-      <li><a routerLink="/login" (click)="setLog()">Login</a></li>
+      <li *ngIf="!logfor"><a routerLink="/login" (click)="setLog()">Login</a></li>
+      <li *ngIf="logfor"><a (click)="logOut()" style="cursor:pointer;">Logout</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
-</nav>
-
+</nav>  
 <router-outlet>
   
 </router-outlet>

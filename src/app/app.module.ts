@@ -21,6 +21,8 @@ import { CollapseModule } from 'ngx-bootstrap';
 import { DataService } from './data.service';
 import { user } from './data-hand';
 import { EditComponent } from './edit/edit.component';
+import { AuthService } from './auth-service';
+import { AuthGuard } from './auth-guard';
 
 
 
@@ -40,7 +42,7 @@ import { EditComponent } from './edit/edit.component';
     CollapseModule.forRoot(),
     HttpModule, FormsModule , ReactiveFormsModule
   ],
-  providers: [{provide:DataService , useClass: DataService}],
+  providers: [{provide:DataService , useClass: DataService} , AuthService , AuthGuard],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule, TooltipModule , ModalModule]
 })
