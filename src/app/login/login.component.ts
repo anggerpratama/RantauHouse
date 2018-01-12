@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
 
   login(){
 
+
+    //new update
     this.datSer.loginPerson(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
@@ -49,6 +51,7 @@ export class LoginComponent implements OnInit {
         
         TimerObservable.create(3000 , this.interval )
         .subscribe(() => {
+          this.apscom.setHome();
           this.router.navigate(['/']);
         });
       
