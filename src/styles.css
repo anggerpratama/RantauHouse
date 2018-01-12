@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-@import "assets/css/newstyle.css";
+@import "assets/css/newstyle.scss";
 .list-group{border-radius: 0 !important;}
 .list-group-item{border-radius: 0 !important;}
 .form-control{border-radius: 0 !important;}
