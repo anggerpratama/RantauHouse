@@ -36,9 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-
-
-    //new push meong 
+    
     this.datSer.loginPerson(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
