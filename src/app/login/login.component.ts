@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   login(){
 
 
-    //new update
+    //new update done master
     this.datSer.loginPerson(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
