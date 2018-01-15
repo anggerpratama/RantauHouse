@@ -65,14 +65,19 @@
           <input type="text" class="form-control" name="username" placeholder="Input field" [(ngModel)] = "model.username">
           <br>
           <label for="">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Input field" [(ngModel)] = "model.password">
+          <input type="text" class="form-control" name="password" placeholder="Input field" [(ngModel)] = "model.password">
         </div>
   
         <button type="submit" class="btn btn-primary">Submit</button>
+        <a routerLink="/"><button type="button" class="btn btn-success">Back to home</button></a>
+        <button type="button" class="btn btn-danger" (click)="deletePerson(model.id_user)">Delete this Acount</button>
       </form>
       
       <div class="alert alert-success" *ngIf="info">
-        <h1><strong>Success Update Data</strong></h1> 
+        <h1><strong>Success Update Data</strong></h1>
+        <a routerLink="/"> 
+        <button type="button" class="btn btn-success">Back to home</button>
+        </a>
       </div>
 
     </div>

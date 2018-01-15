@@ -33,7 +33,7 @@ export class OrderComponent implements OnInit {
   }
 
   tampil(){
-    
+        
   }
 
   getData(){

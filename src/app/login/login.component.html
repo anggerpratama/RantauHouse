@@ -27,8 +27,8 @@
       <p>Enjoy our featur after login</p>
       <br>
       <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Submit</button>
-      <button type="button" class="btn btn-success" routerLink="/signup" (click)="clickHome()"><span class="glyphicon glyphicon-plus-sign"></span> SignUp</button>
-      <button type="button" class="btn btn-warning" routerLink="/" (click)="clickHome()"><span class="glyphicon glyphicon-globe"></span> Back To Home</button>
+      <button type="button" class="btn btn-success" routerLink="/signup"><span class="glyphicon glyphicon-plus-sign"></span> SignUp</button>
+      <button type="button" class="btn btn-warning" routerLink="/"><span class="glyphicon glyphicon-globe"></span> Back To Home</button>
     </div>
     </form>
     
@@ -40,6 +40,15 @@
       <p class="text-center">Success Login</p>
     </div>
     <button type="button" class="btn btn-default">Back To Login</button>
+  </div>
+</div>
+<!-- Failname -->
+<div class="container" *ngIf="(logic == 'Wname')" style="margin-top:120px;">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3">
+    <div class="alert alert-warning">
+      <p class="text-center">You are not Registered</p>
+    </div>
+    <button type="button" class="btn btn-default" (click)="clearOn()">Back To Login</button>
   </div>
 </div>
 

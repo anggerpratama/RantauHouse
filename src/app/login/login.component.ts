@@ -33,6 +33,10 @@ export class LoginComponent implements OnInit {
 
   clickHome(){
     this.logic = "noLog";
+    this.router.navigate(['/']);
+  }
+  clearOn(){
+    this.logic = "noLog";
   }
 
   login(){
@@ -44,15 +48,19 @@ export class LoginComponent implements OnInit {
       if (perLog.id_user) {
         
         sessionStorage.setItem('status' , 'log');
+        sessionStorage.setItem('id_user' , this.perLog.id_user);
         this.logic = "logged";
         this.authSer.openGuard();
         
         TimerObservable.create(3000 , this.interval )
         .subscribe(() => {
           this.apscom.setHome();
+          window.location.reload();
           this.router.navigate(['/']);
         });
       
+      }else if(perLog == "Fname"){
+        this.logic = "Wname";
       }
    
     });

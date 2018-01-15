@@ -8,12 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { EditComponent } from './edit/edit.component';
 import { AuthGuard } from './auth-guard';
 import { AuthService } from './auth-service';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const navApps:Routes = [
-    {path: '' , component: OrderComponent , canActivate: [AuthService]},
+    {path: '' , component: DashboardComponent , canActivate: [AuthService]},
     {path: 'signup' , component: ProfileComponent},
     {path: 'edit/:id' , component: EditComponent , canActivate: [AuthService]},
     {path: 'login' , component: LoginComponent},
-    {path: 'der' , component: HomeComponent}
+    {path: 'der' , component: OrderComponent , canActivate: [AuthService]}
 ]

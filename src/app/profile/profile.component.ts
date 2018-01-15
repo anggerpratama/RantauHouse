@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   }
 
   addPerson(){
+    this.model.password = btoa(this.model.password);
     this._datSer.addData(this.model).subscribe(() => this.infwork());
   }
 

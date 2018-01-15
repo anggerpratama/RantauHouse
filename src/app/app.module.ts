@@ -23,7 +23,7 @@ import { user } from './data-hand';
 import { EditComponent } from './edit/edit.component';
 import { AuthService } from './auth-service';
 import { AuthGuard } from './auth-guard';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -34,7 +34,7 @@ import { HomeComponent } from './home/home.component';
     ProfileComponent,
     OrderComponent,
     EditComponent,
-    HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(navApps),

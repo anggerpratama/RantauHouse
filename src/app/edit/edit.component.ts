@@ -12,6 +12,7 @@ import { user } from '../data-hand';
 export class EditComponent implements OnInit {
   //var
   info:boolean;
+  passwe:string;
   constructor(private _datSer:DataService , private router:Router , private route:ActivatedRoute) {
     this.info = false;
    }
@@ -26,6 +27,7 @@ export class EditComponent implements OnInit {
     this._datSer.getOne(this.id)
     .subscribe(data => { 
       this.model = data[0];
+      this.model.password = atob(this.model.password);
     })
   }
 
@@ -34,6 +36,16 @@ export class EditComponent implements OnInit {
     .subscribe(() => {
       this.info = true;
     });
+  }
+
+  deletePerson(id){
+    this._datSer.deleteData(id).subscribe(() => {
+      sessionStorage.removeItem('status');
+      sessionStorage.removeItem('id_user');
+      window.alert("Your acount is deleted");
+      window.location.reload();
+      this.router.navigate(['/login']);
+    })
   }
 
 }

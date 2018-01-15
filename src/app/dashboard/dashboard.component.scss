@@ -1,0 +1,67 @@
+*{margin: 0;padding: 0;}
+$primary:rgb(48, 130, 202);
+.home{
+    background-color: black;
+    h1{
+        color: white;
+    }
+}
+.sidedash{
+    background-color: rgb(39, 39, 39);color: rgb(255, 255, 255);height: auto;
+    height: 100vh;padding:0;
+    ul{
+        text-decoration: none;list-style: none;
+        li{
+            color: rgb(221, 221, 221);font-size: 20px;font-family: 'Open Sans Light' , sans-serif;margin: 0;
+            background-color: rgb(39, 39, 39);padding: 10px 0;padding-left: 10px;
+            i{
+                font-size: 15px;
+            }
+            ul li{
+                padding-left: 40px;font-size: 18px;
+            }
+        }
+    }
+    p{
+        color: rgb(221, 221, 221);font-size: 20px;font-family: 'Open Sans Light' , sans-serif;margin: 0;
+        background-color: rgb(39, 39, 39);padding: 10px 0;padding-left: 10px;
+        i{
+            font-size: 15px;
+        }
+    }
+}
+#actived{
+    background-color: rgb(31, 31, 31);
+    ul li{
+        background-color: rgb(31, 31, 31);
+    }
+}
+.sidehead{
+    background-color: $primary;margin-bottom:40px;
+    h1{
+        margin: 0;color: white;font-size: 30px;padding: 15px 0;
+    }
+}
+.hednav{
+    background-color: rgb(245, 245, 245);border-bottom: solid 2px rgb(209, 209, 209);width: 100%;
+    height: auto;display:flex; flex-wrap: wrap; 
+    h1{
+        margin: 0;color: rgb(0, 0, 0);font-size: 20px;padding: 20px 0;font-family: 'Open Sans Light' , sans-serif;
+        padding-left: 20px;padding-right:20px;
+        a{
+            color: rgb(0, 0, 0);text-decoration: none;
+        }
+        i{
+            font-size: 15px;
+        }
+    }
+    img{
+        width: 40px;height: 100%;padding: 10px 0;
+    }
+}
+.marginon{
+    padding: 10px;
+}
+.cursor{
+    cursor: pointer;
+}
