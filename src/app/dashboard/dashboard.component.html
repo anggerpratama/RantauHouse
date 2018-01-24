@@ -1,4 +1,16 @@
 
+<!-- pop up native -->
+
+<div class="container-fluid popup">
+  <div class="popup-is">
+    <h1 class="text-center">Are you sure to Logout?</h1>
+      <button type="button" class="btn btn-success" (click)="logout()">Yes</button>
+      <button type="button" class="btn btn-danger" (click)="closepop()">No</button>
+    <p class="text-center">Lorem ipsum dolor sit amet</p>
+  </div>
+</div>
+
+
 <div class="container-fluid">
   
   <div class="row">
@@ -24,7 +36,7 @@
         <h1>home</h1>
         <h1>Dashboard</h1>
         <h1><a routerLink="/edit/{{id_user}}"><i class="glyphicon glyphicon-user"></i> {{varuser.name}}</a> </h1>
-        <h1 (click)="logout()" class="cursor"><i class="glyphicon glyphicon-log-out"></i> Logout </h1>
+        <h1 (click)="changeSt()" class="cursor"><i class="glyphicon glyphicon-log-out"></i> Logout </h1>
         <!-- left line -->
       </div>
       

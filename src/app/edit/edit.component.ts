@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Router , Params , ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 import { user } from '../data-hand';
+declare var $ : any;
 
 @Component({
   selector: 'app-edit',
@@ -47,5 +48,23 @@ export class EditComponent implements OnInit {
       this.router.navigate(['/login']);
     })
   }
+
+  requ(){
+    $('.popup').css({
+      "display": "block"
+    });
+    $('.popup-is').css({
+      "transform": "scale(1 , 1)"
+    });
+  }
+  closerequ(){
+    $('.popup').css({
+      "display": "none"
+    });
+    $('.popup-is').css({
+      "transform": "scale(0 , 0)"
+    });
+  }
+  
 
 }

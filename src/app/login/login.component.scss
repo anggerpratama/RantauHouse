@@ -1,3 +1,30 @@
 .imgrezise{
-    width: 200px;height: auto;
+    width: 180px;height: auto;
+}
+.baclips{
+    background-color: white;position: relative;z-index: 3 !important;margin-top: 90px;padding: 20px;
+}
+.topup{
+    background-color: rgba(1, 136, 255, 0.452);position: fixed;width: 100%;height: 100vh;z-index: -1;
+    p{
+        position: absolute;bottom: 0;right: 5px;color: rgb(255, 255, 255);
+    }
+}
+.margintop{
+    margin:auto;padding:auto;width: 100%;height: 100vh;position: fixed;background-image: url('../../assets/img/vacbek.jpg');
+    background-attachment: fixed;background-size: cover;z-index: -2;
+}
+.frameart{
+    width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.829);
+    padding-top: 20vh;
+}
+.fillart{
+    background-color: white;padding:20px;
+    h1{
+        color: black;font-size: 30px;
+    }
+}
+.loadbar{
+    width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.929);
+    padding-top: 33vh;
 }

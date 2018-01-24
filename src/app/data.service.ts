@@ -12,7 +12,7 @@ export class DataService {
   constructor(private _http:Http) { }
   //fatching All data
   getAlldata(){
-    return this._http.get("http://localhost/api/select.php")
+    return this._http.get("http://localhost:100/api/select.php")
     .map(res => {
 
       this.checkMe = res;
@@ -25,27 +25,27 @@ export class DataService {
   }
   //Send some data
   addData(data){
-    return this._http.post("http://localhost/api/insert.php" , data)
+    return this._http.post("http://localhost:100/api/insert.php" , data)
     .map(() => "");
   }
   //fetching one data
   getOne(id){
-    return this._http.post("http://localhost/api/selectone.php" , {'id' : id})
+    return this._http.post("http://localhost:100/api/selectone.php" , {'id' : id})
     .map(res => res.json());
   }
   //editing data 
   editData(data){
-    return this._http.post("http://localhost/api/edit.php" , data)
+    return this._http.post("http://localhost:100/api/edit.php" , data)
     .map(() => "");
   }
   //deleting data 
   deleteData(id){
-    return this._http.post("http://localhost/api/delete.php" , {'id':id})
+    return this._http.post("http://localhost:100/api/delete.php" , {'id':id})
     .map(() => this.getAlldata());
   }
   //Login page
   loginPerson(username : string , password:string){
-    return this._http.post("http://localhost/api/login.php" , { username: username, password: password })
+    return this._http.post("http://localhost:100/api/login.php" , { username: username, password: password })
     .map(res =>{
       if (res) {
         return res.json();

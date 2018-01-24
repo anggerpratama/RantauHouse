@@ -1,0 +1,16 @@
+
+.popup{
+    width: 100%;height: 100vh;background-color: rgba(0, 0, 0, 0.637);position: fixed;display: none;z-index: 20;
+}
+.popup-is{
+    width: 500px;height: auto;margin: 18vh auto;background-color: white;padding: 40px;transform: scale(0 , 0);
+    animation-name: force;animation-duration: 0.3s;
+    button{
+        width: 150px;padding: 20px;font-size: 20px;margin: 50px 6%;
+    }
+}
+
+@keyframes force{
+    0%{transform: scale(0 ,0); opacity: 0;}
+    100%{transform: scale(1 ,1); opacity: 1;}
+}

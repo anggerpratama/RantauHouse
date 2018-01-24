@@ -1,26 +1,71 @@
-
-<div class="container margin-now" *ngIf="(logic == 'noLog')">
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <legend><h1>Hallo People</h1></legend>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque nulla, culpa quos laborum tenetur repellat in blanditiis accusamus vero natus fugiat deserunt iste, voluptatum possimus molestias dignissimos nisi id dolorum?</p>
-    
-    <div class="alert alert-info">
-        <strong>Title!</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis velit pariatur. Assumenda nihil at quaerat quas nesciunt, sequi accusamus nisi facilis suscipit minus accusantium, fugit officia, in dolorem quo!
+<!-- Failname -->
+<div class="container loadbar" *ngIf="(logic == 'load')">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 text-center">
+      <img src="{{baseUrl}}/img/Ripple.gif" alt="load">
+      <p style="color:white">Loading...</p>
     </div>
-    
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+
+<!-- Failname -->
+<div class="container frameart" *ngIf="(logic == 'Wname')">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+      <h1>Sorry You are not Registered</h1>
+      <p>Please Contact your Admin</p>
+      <div style="margin:40px 0;"></div>
+      <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+    </div>
+  </div>
+
+<!-- Failpassword -->
+<div class="container frameart" *ngIf="(logic == 'Wpass')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+    <h1 style="color: red;">Oops!! Your password is wrong</h1>
+    <p>Please Contact your Admin</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
+</div>
+
+<!-- Failconnect -->
+<div class="container frameart" *ngIf="(logic == 'ErrConn')">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+      <h1 style="color: red;">Oops!! Your lost Connection</h1>
+      <p>Please Try again Latter</p>
+      <div style="margin:40px 0;"></div>
+      <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+    </div>
+  </div>
+
+<!-- Success -->
+<div class="container frameart" *ngIf="(logic == 'logged')">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+      <h1 style="color: rgb(0, 214, 0);">Success!! Welcome {{perLog.name}}</h1>
+      <p>Enjoy Our Featurs</p>
+      <div style="margin:40px 0;"></div>
+    </div>
+  </div>
+
+<div class="margintop">
+</div>
+<div class="topup">
+  <p>Powered by Google</p>
+</div>
+
+<div class="container" *ngIf="(logic == 'noLog')">
+  <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 
+  col-sm-offset-2 col-md-offset-3 col-lg-offset-4 baclips">
       <img src="{{baseUrl}}/img/logo.png" alt="" class="img-responsive imgrezise">
-    <form method="post" role="form" (submit)="login()">
+    <form method="post" role="form" (ngSubmit)="login()" ngNativeValidate>
       <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control input-lg" placeholder="username..." [(ngModel)] = "model.username" name="username" required>
+        <input type="text" class="form-control" placeholder="username..." [(ngModel)] = "model.username" name="username" required>
       </div>
       <label></label>
       <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input type="password" class="form-control input-lg" placeholder="password..." [(ngModel)] = "model.password" name="password" required>
+          <input type="password" class="form-control" placeholder="password..." [(ngModel)] = "model.password" name="password" required>
       </div>
       <br>
       <legend><h1>Login</h1></legend>
@@ -28,27 +73,10 @@
       <br>
       <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Submit</button>
       <button type="button" class="btn btn-success" routerLink="/signup"><span class="glyphicon glyphicon-plus-sign"></span> SignUp</button>
-      <button type="button" class="btn btn-warning" routerLink="/"><span class="glyphicon glyphicon-globe"></span> Back To Home</button>
+      <button type="button" class="btn btn-warning" routerLink="/"><span class="glyphicon glyphicon-globe"></span> Home</button>
     </div>
     </form>
     
-  </div>
-</div>
-<div class="container" *ngIf="(logic == 'logged')" style="margin-top:120px;">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3">
-    <div class="alert alert-success">
-      <p class="text-center">Success Login</p>
-    </div>
-    <button type="button" class="btn btn-default">Back To Login</button>
-  </div>
-</div>
-<!-- Failname -->
-<div class="container" *ngIf="(logic == 'Wname')" style="margin-top:120px;">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3">
-    <div class="alert alert-warning">
-      <p class="text-center">You are not Registered</p>
-    </div>
-    <button type="button" class="btn btn-default" (click)="clearOn()">Back To Login</button>
   </div>
 </div>
 

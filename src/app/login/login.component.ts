@@ -6,6 +6,7 @@ import { AuthGuard } from '../auth-guard';
 import { Router } from '@angular/router';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import { Session } from 'selenium-webdriver';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -40,9 +41,17 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    this.showLoad();
+    //if connect error
+    TimerObservable.create(8000)
+        .subscribe(() => {
+          this.logic = "ErrConn";
+    });
+
+    //if Success
     this.datSer.loginPerson(this.model.username , this.model.password)
-    .subscribe(perLog => {
+    .subscribe(
+      perLog => {
       this.perLog = perLog;
       
       if (perLog.id_user) {
@@ -52,19 +61,31 @@ export class LoginComponent implements OnInit {
         this.logic = "logged";
         this.authSer.openGuard();
         
-        TimerObservable.create(3000 , this.interval )
+        TimerObservable.create(2000 , this.interval)
         .subscribe(() => {
           this.apscom.setHome();
           window.location.reload();
           this.router.navigate(['/']);
         });
+
+        return true;
       
-      }else if(perLog == "Fname"){
+      }
+      else if(perLog == "Fname"){
         this.logic = "Wname";
+        return true;
+      }
+      else{
+        this.logic = "Wpass";
+        return true;
       }
    
-    });
+    }); // end of ocur
   
+  }// end of login func
+
+  showLoad(){
+    this.logic = "load";
   }
 
 }

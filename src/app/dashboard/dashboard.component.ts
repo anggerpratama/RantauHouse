@@ -3,13 +3,14 @@ import { user } from '../data-hand';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router/';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
-
+declare var $ : any;
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  
   id_user:string;
   private interval:number;
   varuser = new user();
@@ -39,6 +40,23 @@ export class DashboardComponent implements OnInit {
     window.alert('you are now logged out');
     window.location.reload();
     this.router.navigate(['/login']);
+  }
+
+  changeSt(){
+    $('.popup').css({
+      "display": "block"
+    });
+    $('.popup-is').css({
+      "transform": "scale(1 , 1)"
+    });
+  }
+  closepop(){
+    $('.popup').css({
+      "display": "none"
+    });
+    $('.popup-is').css({
+      "transform": "scale(0 , 0)"
+    });
   }
 
 }

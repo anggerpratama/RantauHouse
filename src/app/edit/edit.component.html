@@ -1,3 +1,14 @@
+<!-- pop up native -->
+
+<div class="container-fluid popup">
+  <div class="popup-is">
+    <h1 class="text-center">Are you sure you want to deleted your acount?</h1>
+      <button type="button" class="btn btn-success" (click)="deletePerson(model.id_user)">Yes</button>
+      <button type="button" class="btn btn-danger" (click)="closerequ()">No</button>
+    <p class="text-center">Take some Result why you delete your acount? <a href="http://">Here..</a></p>
+  </div>
+</div>
+
 <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h1 class="text-center">Welcome {{model.name}}</h1>
@@ -70,7 +81,7 @@
   
         <button type="submit" class="btn btn-primary">Submit</button>
         <a routerLink="/"><button type="button" class="btn btn-success">Back to home</button></a>
-        <button type="button" class="btn btn-danger" (click)="deletePerson(model.id_user)">Delete this Acount</button>
+        <button type="button" class="btn btn-danger" (click)="requ()">Delete this Acount</button>
       </form>
       
       <div class="alert alert-success" *ngIf="info">
